@@ -25,6 +25,13 @@ Given a year, return the century it is in. The first century spans from the year
 - For `year = 1700`, the output should be
 `centuryFromYear(year) = 17`.
 
+### Solution : 
+```javascirpt
+function centuryFromYear(year) {
+return Math.floor((year-1)/100) + 1;
+}
+```
+
 ## 3. CheckPalindrome
 Given the string, check if it is a palindrome. (A palindrome is a string that reads the same left-to-right and right-to-left.)
 
