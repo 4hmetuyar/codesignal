@@ -10,7 +10,7 @@ Write a function that returns the sum of two numbers.
 
 ### Solution : 
 
-```
+```javascript
 function add(param, ...otherParams) {    
     return param + (otherParams.length ? add(...otherParams) : 0);
 }
