@@ -1,3 +1,3 @@
-function add(param1, param2) {
-return param1+param2;
+function add(param, ...otherParams) {    
+    return param + (otherParams.length ? add(...otherParams) : 0);
 }
