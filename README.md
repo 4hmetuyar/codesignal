@@ -18,7 +18,7 @@ Given a year, return the century it is in. The first century spans from the year
 `centuryFromYear(year) = 17`.
 
 ## 3. CheckPalindrome
-Given the string, check if it is a palindrome.
+Given the string, check if it is a palindrome. (A palindrome is a string that reads the same left-to-right and right-to-left.)
 
 ### Example
 
