@@ -26,7 +26,7 @@ Given a year, return the century it is in. The first century spans from the year
 `centuryFromYear(year) = 17`.
 
 ### Solution : 
-```javascirpt
+```javascript
 function centuryFromYear(year) {
 return Math.floor((year-1)/100) + 1;
 }
