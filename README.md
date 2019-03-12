@@ -44,7 +44,15 @@ Given the string, check if it is a palindrome. (A palindrome is a string that re
 - For `inputString = "a"`, the output should be
 `checkPalindrome(inputString) = true.`
 
-## 4.AdjacentElementsProduct
+### Solution : 
+
+```javascript
+function checkPalindrome(inputString) {
+    return inputString == inputString.split('').reverse().join('');
+}
+```
+
+## 4. AdjacentElementsProduct
 Given an array of integers, find the pair of adjacent elements that has the largest product and return that product.
 
 ### Example :
@@ -53,6 +61,19 @@ Given an array of integers, find the pair of adjacent elements that has the larg
 `adjacentElementsProduct(inputArray) = 21`.
 
 `7` and `3` produce the largest product.
+
+### Solution :
+```javascript
+function adjacentElementsProduct(inputArray) {
+ var cb = Number.NEGATIVE_INFINITY;
+    for(var i=0;i<inputArray.length-1;i++){
+        if(inputArray[i]*inputArray[i+1] > cb){
+          cb = inputArray[i]*inputArray[i+1];
+        }
+    }
+  return cb;
+}
+```
 
 ## 5. ShapeArea
 Below we will define an n-interesting polygon. Your task is to find the area of a polygon for a given n.
