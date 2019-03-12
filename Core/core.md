@@ -19,3 +19,24 @@ function addTwoDigits(n) {
   return sum;
 }
 ```
+
+## 2. Largest Number
+
+Given an integer `n`, return the largest number that contains exactly `n` digits.
+
+### Example :
+
+- For `n = 3`, the output should be
+`largestNumber(n) = 999`.
+
+### Solution : 
+
+```javascript
+function largestNumber(n) {
+    count =""
+    for(i=1;i<=n;i++){
+        count+="9";
+    }
+    return parseInt(count);
+}
+```
