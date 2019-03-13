@@ -1,4 +1,4 @@
-# Core 
+# Core
 
 ## 1. Add Two Digits
 
@@ -7,9 +7,9 @@ You are given a two-digit integer `n`. Return the sum of its digits.
 ### Example :
 
 - For `n = 29`, the output should be
-`addTwoDigits(n) = 11`.
+  `addTwoDigits(n) = 11`.
 
-### Solution : 
+### Solution :
 
 ```javascript
 function addTwoDigits(n) {
@@ -27,19 +27,20 @@ Given an integer `n`, return the largest number that contains exactly `n` digits
 ### Example :
 
 - For `n = 3`, the output should be
-`largestNumber(n) = 999`.
+  `largestNumber(n) = 999`.
 
-### Solution : 
+### Solution :
 
 ```javascript
 function largestNumber(n) {
-    count =""
-    for(i=1;i<=n;i++){
-        count+="9";
-    }
-    return parseInt(count);
+  count = "";
+  for (i = 1; i <= n; i++) {
+    count += "9";
+  }
+  return parseInt(count);
 }
 ```
+
 ## 3. Candies
 
 `n` children have got `m` pieces of candy. They want to eat as much candy as they can, but each child must eat exactly the same amount of candy as any other child. Determine how many pieces of candy will be eaten by all the children together. Individual pieces of candy cannot be split.
@@ -47,15 +48,15 @@ function largestNumber(n) {
 ### Example :
 
 - For `n = 3` and `m = 10`, the output should be
-`candies(n, m) = 9`.
+  `candies(n, m) = 9`.
 
 Each child will eat `3` pieces. So the answer is `9`.
 
-### Solution : 
+### Solution :
 
 ```javascript
 function candies(n, m) {
-    return m - m % n;
+  return m - (m % n);
 }
 ```
 
@@ -70,14 +71,13 @@ Given the total number of rows and columns in the theater (nRows and nCols, resp
 ### Example :
 
 - For `nCols = 16`, `nRows = 11`, `col = 5`, and `row = 3`, the output should be
-`seatsInTheater(nCols, nRows, col, row) = 96`.
+  `seatsInTheater(nCols, nRows, col, row) = 96`.
 
-
-### Solution : 
+### Solution :
 
 ```javascript
 function seatsInTheater(nCols, nRows, col, row) {
-return (nRows - row) * (nCols - col + 1)
+  return (nRows - row) * (nCols - col + 1);
 }
 ```
 
@@ -93,16 +93,15 @@ Given a divisor and a bound, find the largest integer N such that:
 ### Example :
 
 - For `divisor = 3` and `bound = 10`, the output should be
-`maxMultiple(divisor, bound) = 9`.
+  `maxMultiple(divisor, bound) = 9`.
 
 The largest integer divisible by 3 and not larger than 10 is 9.
 
-
-### Solution : 
+### Solution :
 
 ```javascript
 function maxMultiple(divisor, bound) {
-return bound - bound % divisor;
+  return bound - (bound % divisor);
 }
 ```
 
@@ -115,10 +114,9 @@ Given `n` and `firstNumber`, find the number which is written in the radially op
 ### Example :
 
 - For `n = 10` and `firstNumber = 2`, the output should be
-`circleOfNumbers(n, firstNumber) = 7`.
+  `circleOfNumbers(n, firstNumber) = 7`.
 
-
-### Solution : 
+### Solution :
 
 ```c#
 int circleOfNumbers(int n, int firstNumber) {
@@ -142,26 +140,24 @@ Using the bike's timer, calculate the current time. Return an answer as the sum 
 ### Example :
 
 - For `n = 240`, the output should be
-`lateRide(n) = 4`.
+  `lateRide(n) = 4`.
 
 Since `240` minutes have passed, the current time is `04:00`. The digits sum up to 0 + 4 + 0 + 0 = 4, which is the answer.
 
 - For n = 808, the output should be
-`lateRide(n) = 14`.
+  `lateRide(n) = 14`.
 
 808 minutes mean that it's `13:28` now, so the answer should be 1 + 3 + 2 + 8 = 14.
 
-
-### Solution : 
+### Solution :
 
 ```javascript
 function lateRide(n) {
-return (((n - n % 60) / 60).toString() + (n % 60).toString())
+  return (((n - (n % 60)) / 60).toString() + (n % 60).toString())
     .split("")
     .map(e => parseInt(e))
     .reduce((a, b) => a + b);
 }
-
 ```
 
 ## 8. Phone Call
@@ -171,24 +167,25 @@ Some phone usage rate may be described as follows:
 - first minute of a call costs min1 cents,
 - each minute from the 2nd up to 10th (inclusive) costs min2_10 cents
 - each minute after 10th costs min11 cents.
-You have `s` cents on your account before the call. What is the duration of the longest call (in minutes rounded down to the nearest integer) you can have?
+  You have `s` cents on your account before the call. What is the duration of the longest call (in minutes rounded down to the nearest integer) you can have?
+
 ### Example :
 
 - For `min1 = 3`, `min2_10 = 1`, `min11 = 2`, and `s = 20`, the output should be
-`phoneCall(min1, min2_10, min11, s) = 14`.
+  `phoneCall(min1, min2_10, min11, s) = 14`.
 
 Here's why:
 
 - the first minute costs 3 cents, which leaves you with `20 - 3 = 17` cents;
-- the total cost of minutes 2 through 10 is 1 * 9 = 9, so you can talk 9 more minutes and still have `17 - 9 = 8` cents;
+- the total cost of minutes 2 through 10 is 1 \* 9 = 9, so you can talk 9 more minutes and still have `17 - 9 = 8` cents;
 - each next minute costs 2 cents, which means that you can talk `8 / 2 = 4` more minutes.
-Thus, the longest call you can make is `1 + 9 + 4 = 14` minutes long.
+  Thus, the longest call you can make is `1 + 9 + 4 = 14` minutes long.
 
-### Solution : 
+### Solution :
 
 ```c#
 int phoneCall(int min1, int min2_10, int min11, int S) {
-  
+
   if (S < min1) {
     return 0;
   }
@@ -198,5 +195,26 @@ int phoneCall(int min1, int min2_10, int min11, int S) {
     }
   }
   return 10 + (S - min1 - min2_10 * 9) / min11;
+}
+```
+
+## 9. Reach Next Level
+
+You are playing an RPG game. Currently your experience points (XP) total is equal to experience. To reach the next level your XP should be at least at threshold. If you kill the monster in front of you, you will gain more experience points in the amount of the reward.
+
+Given values experience, threshold and reward, check if you reach the next level after killing the monster.
+
+### Example :
+
+- For `experience = 10`, `threshold = 15`, and `reward = 5`, the output should be
+  `reachNextLevel(experience, threshold, reward) = true`;
+- For `experience = 10`, `threshold = 15`, and `reward = 4`, the output should be
+  `reachNextLevel(experience, threshold, reward) = false`.
+
+### Solution :
+
+```javascript
+function reachNextLevel(experience, threshold, reward) {
+  return experience + reward >= threshold;
 }
 ```
